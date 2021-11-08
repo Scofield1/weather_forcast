@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+
+    <title>Weather Space</title>
+</head>
+<body>
+<nav class="navbar navbar-light bg-warning">
+    <div class="container">
+        <span class="navbar-brand mb-0 h1">
+            <i class="bi bi-cloud-sun"></i>
+            Weather Space
+        </span>
+    </div>
+</nav>
+<center class="mt-3">
+    <div class="container image ">
+        <img src="data:image/png;base64,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">
+        <img class="m-1"
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7VGeQ7zMfBf6zw9_6NLaVp2ApekpKbKtlZfYTEbCQ45Z_HPwwkhiCgzqXdL09FTHgzRY&usqp=CAU">
+    </div>
+</center>
+<center class="col-md-6 offset-3 mt-4">
+            <h3>Enter any City</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="city" placeholder="Search" aria-label="city"
+                   aria-describedby="button-addon2">
+            <button class="btn btn-primary" type="submit" id="button-addon2">Search</button>
+        </div>
+    </form>
+</center>
+<div class="container">
+    {% if data.city is not None %}
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <h3>City: {{ data.city | title }}</h3>
+            <h3>Country: {{ data.timezone }}</h3>
+            <h3>Description: {{ data.description | title }}</h3>
+            <div class="image">
+                <img src="http://openweathermap.org/img/w/{{ data.icon }}.png">
+            </div>
+            <h3>Temperature: {{ data.temperature }}</h3>
+            <h3>Pressure: {{ data.pressure }}</h3>
+            <h3>Humidity: {{ data.humidity }}</h3>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+-->
+</body>
+</html>
