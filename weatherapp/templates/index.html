@@ -32,8 +32,13 @@
 </center>
 <div class="row">
 <div class="col-md-6 offset-md-3 mt-4 col-sm-8 offset-sm-2">
-            <h3>Enter any City</h3>
-    <form action="" method="POST">
+        <div class="container-fluid">
+        <h3>Enter any City</h3>
+        </div>
+
+    <div class="card border border-white">
+  <div class="card-body">
+          <form action="" method="POST">
         {% csrf_token %}
         <div class="input-group mb-3">
             <input type="text" class="form-control" name="city" placeholder="Search" aria-label="city"
@@ -41,12 +46,14 @@
             <button class="btn btn-warning" type="submit" id="button-addon2">Search</button>
         </div>
     </form>
+  </div>
+</div>
 </div>
 </div>
 <div class="container-fluid">
     {% if data.city is not None %}
     <div class="row">
-        <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">
+        <div class="col-md-6 offset-md-3 col-s-8 offset-sm-2">
             <h3>City: <span class="lead text-danger">{{ data.city | title }}</span></h3>
             <h3>Country:<span class="lead text-success"> {{ data.timezone }}</span></h3>
             <h3>Description:<span class="lead"> {{ data.description | title }}</span></h3>
