@@ -9,10 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
 
     <title>Weather Space</title>
 </head>
-<body>
+<body style="font-family: sans-serif">
 <nav class="navbar navbar-light bg-warning">
     <div class="container">
         <span class="navbar-brand mb-0 h1">
@@ -28,30 +30,32 @@
              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7VGeQ7zMfBf6zw9_6NLaVp2ApekpKbKtlZfYTEbCQ45Z_HPwwkhiCgzqXdL09FTHgzRY&usqp=CAU">
     </div>
 </center>
-<center class="col-md-6 offset-3 mt-4">
+<div class="row">
+<div class="col-md-6 offset-md-3 mt-4 col-sm-8 offset-sm-2">
             <h3>Enter any City</h3>
     <form action="" method="POST">
         {% csrf_token %}
         <div class="input-group mb-3">
             <input type="text" class="form-control" name="city" placeholder="Search" aria-label="city"
                    aria-describedby="button-addon2">
-            <button class="btn btn-primary" type="submit" id="button-addon2">Search</button>
+            <button class="btn btn-warning" type="submit" id="button-addon2">Search</button>
         </div>
     </form>
-</center>
-<div class="container">
+</div>
+</div>
+<div class="container-fluid">
     {% if data.city is not None %}
     <div class="row">
-        <div class="col-md-6 offset-3">
-            <h3>City: {{ data.city | title }}</h3>
-            <h3>Country: {{ data.timezone }}</h3>
-            <h3>Description: {{ data.description | title }}</h3>
+        <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">
+            <h3>City: <span class="lead text-danger">{{ data.city | title }}</span></h3>
+            <h3>Country:<span class="lead text-success"> {{ data.timezone }}</span></h3>
+            <h3>Description:<span class="lead"> {{ data.description | title }}</span></h3>
             <div class="image">
                 <img src="http://openweathermap.org/img/w/{{ data.icon }}.png">
             </div>
-            <h3>Temperature: {{ data.temperature }}</h3>
-            <h3>Pressure: {{ data.pressure }}</h3>
-            <h3>Humidity: {{ data.humidity }}</h3>
+            <h3>Temperature: <span class="lead">{{ data.temperature }}</span></h3>
+            <h3>Pressure: <span class="lead">{{ data.pressure }}</span></h3>
+            <h3>Humidity: <span class="lead">{{ data.humidity }}</span></h3>
         </div>
         {% endif %}
     </div>
